@@ -1,24 +1,24 @@
 ﻿@model MVCBusinessBooking.Domain.Models.Restaurant
 
-<li class="col-lg-12">
+<li class="col-lg-10 restaurangItem">
     <div>
-        <div style="float:left;">
+        <div class="image">
             @if (@Model.PictureUrl.Length > 0)
             {
                 <img src="/UserImages/@Model.Name/@Model.PictureUrl" class="restaurantImg" />
-
             }
             else
             {
-                <img src="~/Assets/UserImages/placeholder.jpg" class="restaurantImg" />
+                <img src="~/Assets/UserImages/" class="restaurantImg img-responsive">
             }
         </div>
-        <div>
 
-            <p style="font-size: medium">@Model.Name</p>
+        <div class="restaurantInfo">
+            <h3>@Model.Name</h3>
+
+            <p><i>@Model.StreetName, @Model.City</i></p>
+            <div>@Model.Description</div>
+            <div>@Html.ActionLink("Boka", "BookTable", "Restaurant", new { id = Model.Id }, null)</div>
+        </div>
     </div>
-    <span>@Model.StreetName, @Model.City</span>
-    <div>@Model.Description</div>
-    <div>@Html.ActionLink("Boka", "BookTable", "Restaurant", new { id = Model.Id }, null)</div>
-</div>
 </li>

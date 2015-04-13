@@ -7,47 +7,52 @@
     <meta name="viewport" content="width=device-width"/>
 
     @Styles.Render("~/bundles/bootstrap")
-    @Styles.Render("~/bundles/css")
+
     @Styles.Render("~/bundles/themes/base/css")
+    @Styles.Render("~/bundles/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-<header>
-
-    <div class=" content-wrapper">
-        <div class="float-left">
-            <h1>BusinessBooker</h1>
-        </div>
-        <div style="float: right; font-size: medium">
-            <section id="login">
-                @Html.Partial("_LoginPartial")
-            </section>
-            <nav>
-                <ul id="menu">
-                    <li>@Html.ActionLink("Restaurants", "Index", "Restaurant")</li>
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li>@Html.ActionLink("MyBookings", "MyBookings", "Restaurant")</li>
-                    }
-
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+<div class="container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">BusinessBooker</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    
+                    <li>@Html.ActionLink("Restaurant", "Index", "Restaurant")</li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
-            </nav>
+
+                <section id="login">
+                    @Html.Partial("_LoginPartial")
+                </section>
+            </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+    </nav>
+    <div class="jumbotron">
+        <div id="body">
+            <section class="container">
+                @RenderBody()
+            </section>
         </div>
     </div>
-</header>
-<div id="body" style="min-height: 500px;">
-    @RenderSection("featured", false)
-    <section class="container">
-        @RenderBody()
-    </section>
-</div>
+</div> <!-- /container -->
+
 <footer style="background-color: white; height: 20px">
     <div class="container">
         <div>
             <div style="color: black; font-size: 10px;">
-                <p>&copy; @DateTime.Now.Year - À la Katt</p>
+                <p>&copy; @DateTime.Now.Year - BusinessBooker</p>
             </div>
         </div>
     </div>

@@ -9,12 +9,12 @@
 
     @using (Html.BeginForm())
     {
-        <div style="font-size: small" class="col-lg-4">
+        <div class="col-lg-4">
             City Search: @Html.TextBox("SearchString") <br />
         </div>
     }
 
-    <ol class="round " style="font-size: small">
+    <ol>
         @foreach (Restaurant item in Model)
         {
             if (item.PictureUrl == null)

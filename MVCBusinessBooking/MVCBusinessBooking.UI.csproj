@@ -137,8 +137,8 @@
     <Content Include="Assets\Content\SiteCustomisation.css" />
     <Content Include="Assets\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Assets\Images\accent.png" />
+    <Content Include="Assets\Images\backgroundImg.jpg" />
     <Content Include="Assets\Images\bullet.png" />
-    <Content Include="Assets\Images\food.jpeg" />
     <Content Include="Assets\Images\heroAccent.png" />
     <Content Include="Assets\Images\orderedList0.png" />
     <Content Include="Assets\Images\orderedList1.png" />
@@ -153,12 +153,12 @@
     <Content Include="Assets\Images\white_paper.jpg" />
     <Content Include="Assets\Scripts\jquery.validate.js" />
     <Content Include="Assets\Scripts\jquery.validate.min.js" />
+    <Content Include="Assets\UserImages\macaroons.jpg" />
     <Content Include="Assets\UserImages\placeholder.jpg" />
     <Content Include="Assets\Content\bootstrap-theme.css" />
     <Content Include="Assets\Content\bootstrap-theme.min.css" />
     <Content Include="Assets\Content\bootstrap.css" />
     <Content Include="Assets\Content\bootstrap.min.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Assets\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Assets\fonts\glyphicons-halflings-regular.woff" />
@@ -215,10 +215,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Shared\_ResturantsPartial.cshtml" />
     <Content Include="Assets\Scripts\jquery-2.1.3.min.map" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Assets\Content\bootstrap-theme.css.map" />
     <Content Include="Assets\Content\bootstrap.css.map" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />

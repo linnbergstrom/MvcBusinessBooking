@@ -1,6 +1,5 @@
 ﻿body {
-    background-image: url('white_paper.jpg')
-
+	/*background-image: url('/Assets/Images/BackgroundImg.jpg');*/
 }
 
 .editor-amount-selector label {
