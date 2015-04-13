@@ -1,0 +1,63 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <meta name="viewport" content="width=device-width"/>
+
+    @Styles.Render("~/bundles/bootstrap")
+    @Styles.Render("~/bundles/css")
+    @Styles.Render("~/bundles/themes/base/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+<header>
+
+    <div class=" content-wrapper">
+        <div class="float-left">
+            <h1>BusinessBooker</h1>
+        </div>
+        <div style="float: right; font-size: medium">
+            <section id="login">
+                @Html.Partial("_LoginPartial")
+            </section>
+            <nav>
+                <ul id="menu">
+                    <li>@Html.ActionLink("Restaurants", "Index", "Restaurant")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("MyBookings", "MyBookings", "Restaurant")</li>
+                    }
+
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<div id="body" style="min-height: 500px;">
+    @RenderSection("featured", false)
+    <section class="container">
+        @RenderBody()
+    </section>
+</div>
+<footer style="background-color: white; height: 20px">
+    <div class="container">
+        <div>
+            <div style="color: black; font-size: 10px;">
+                <p>&copy; @DateTime.Now.Year - À la Katt</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryui")
+@Scripts.Render("~/bundles/bootstrap")
+@*<script src="~/Scripts/jquery.datetimepicker.js"></script>*@
+@Scripts.Render("~/bundles/Main")
+@RenderSection("scripts", false)
+</body>
+</html>

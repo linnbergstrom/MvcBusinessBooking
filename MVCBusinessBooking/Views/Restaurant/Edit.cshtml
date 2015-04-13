@@ -1,0 +1,166 @@
+﻿@using System.Web.Optimization
+@model MVCBusinessBooking.ViewModels.RestaurantViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+<div class="container" style="background-color: white; margin-left: 20px; opacity: 0.8;">
+
+    <h2 style="font-family: verdana; font-size: medium; margin-bottom: 20px"> Edit Your Account</h2>
+
+    @using (Html.BeginForm("Edit", "Restaurant", FormMethod.Post, new {enctype = "multipart/form-data"}))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset style="font-size: small" class="col-lg-4">
+            <legend>Restaurant</legend>
+
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.UserName)
+                @Html.ValidationMessageFor(model => model.UserName)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Name)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.PhoneNumber)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.PhoneNumber)
+                @Html.ValidationMessageFor(model => model.PhoneNumber)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Email)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.StreetName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.StreetName)
+                @Html.ValidationMessageFor(model => model.StreetName)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.City)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.City)
+                @Html.ValidationMessageFor(model => model.City)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Description)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Description)
+                @Html.ValidationMessageFor(model => model.Description)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.MaxCapacity)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.MaxCapacity)
+                @Html.ValidationMessageFor(model => model.MaxCapacity)
+            </div>
+            
+            <label>Välj antal och bordstyper</label>
+            <div class="editor-amount-selector">
+                @Html.LabelFor(model => model.OneSeat, "En Plats")
+                @Html.TextBoxFor(model => model.OneSeat, new { type = "number", min = "0", max = "20" })
+            </div>
+            <div class="editor-amount-selector">
+                @Html.LabelFor(model => model.TwoSeat, "Två Platser")
+                @Html.TextBoxFor(model => model.TwoSeat, new { type = "number", min = "0", max = "20" })
+            </div>
+            <div class="editor-amount-selector">
+                @Html.LabelFor(model => model.FourSeat, "Fyra Platser")
+                @Html.TextBoxFor(model => model.FourSeat, new { type = "number", min = "0", max = "20" })
+            </div>
+            <div class="editor-amount-selector">
+                @Html.LabelFor(model => model.SixSeat, "Sex Platser")
+                @Html.TextBoxFor(model => model.SixSeat, new { type = "number", min = "0", max = "20" })
+            </div>
+            <div class="editor-amount-selector">
+                @Html.LabelFor(model => model.EightSeat, "Åtta Platser")
+                @Html.TextBoxFor(model => model.EightSeat, new { type = "number", min = "0", max = "20" })
+            </div>
+
+            <div class="editor-label label">
+                @Html.LabelFor(model => model.MaxSeatsPerReservation)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.MaxSeatsPerReservation)
+                @Html.ValidationMessageFor(model => model.MaxSeatsPerReservation)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ImageUpload)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.ImageUpload, new {type = "file", accept = "image/*"})
+                @Html.ValidationMessageFor(model => model.ImageUpload)
+            </div>
+            <div>
+                <img src="/UserImages/@Model.Name/@Model.PictureUrl" class="restaurantImg" />
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.OpeningTime)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.OpeningTime)
+                @Html.ValidationMessageFor(model => model.OpeningTime)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ClosingTime)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ClosingTime)
+                @Html.ValidationMessageFor(model => model.ClosingTime)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Active)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Active)
+                @Html.ValidationMessageFor(model => model.Active)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Registered)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Registered, new { @readonly = "readonly" })
+            </div>
+
+            <p>
+                <input type="submit" value="Save" id="save" />
+            </p>
+        </fieldset>
+    }
+
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+</div>

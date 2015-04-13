@@ -1,0 +1,50 @@
+﻿@*@model IEnumerable<MVCRestaurang.Models.BookingViewModel>*@
+@model MVCRestaurang.Models.BookingViewModel
+
+@{
+    ViewBag.Title = "MyBookings";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("MyBookings", "Restaurant", FormMethod.Post, new {enctype = "multipart/form-data"}))
+{
+    
+    <div class="container" style="background-color: white; opacity: 0.8; margin-left: 20px;">
+        <h2 style="font-family: verdana; font-size: medium; margin-bottom: 20px">
+            MyBookings
+        </h2>
+        @*@Html.HiddenFor(model => model.BookingId)*@
+        <div style="margin-bottom: 50px" >
+            <table style="font-size: small; margin: 20px;">
+                <thead>
+                    
+                    <tr class="tableBooking">
+                        <th class="tableBooking">Name</th>
+                        <th class="tableBooking">PhoneNumber</th>
+                        <th class="tableBooking">Email</th>
+                        <th class="tableBooking">NumberOfPeople</th>
+                        <th class="tableBooking">Delete Booking</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Bookings)
+                    {
+                        
+                        <tr class="tableBooking">
+                            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                            @*<td class="tableBooking">@item.Name</td>*@
+                            <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
+                            @*<td class="tableBooking">@item.PhoneNumber</td>*@
+                            <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                            @*<td class="tableBooking">@item.Email</td>*@
+                            <td>@Html.DisplayFor(modelItem => item.NumberOfPeople)</td>
+                            @*<td class="tableBooking">@item.NumberOfPeople</td>*@
+                            <td class="tableBooking">
+                                @Html.ActionLink("Delete", "DeleteBooking", "Restaurant", new { id = item.Id }, null)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}

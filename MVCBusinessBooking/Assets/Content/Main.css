@@ -1,0 +1,15 @@
+﻿body {
+    background-image: url('white_paper.jpg')
+
+}
+
+.editor-amount-selector label {
+    float: left;
+    width: 60px;  
+  text-align: right;
+}
+.editor-amount-selector input {
+  width: 45px; 
+  margin: 0 0 0 10px;
+  
+}

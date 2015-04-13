@@ -1,0 +1,48 @@
+﻿/*.image {
+    float: left;
+    height: 104px;
+    width: 146px;
+}
+
+.restaurant-info { margin: 0 0 0 160px; }
+
+.restaurant-info h3 {
+    color: #4BA0BF;
+    font-family: "Museo Slab 700", Rockwell, Georgia, serif;
+    font-size: 1.5em;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    width: 80%;
+}
+
+.restaurant-info .address .description {
+    font-size: 1em;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.restaurant-info h3 a, .restaurant-info h3 a:hover {
+    color: #4BA0BF;
+    text-decoration: none;
+}
+
+a.btn.btn-book { float: right; }
+
+.restaurants-list li:first-child { border-top: 0 none; }
+
+.restaurants-list li {
+    border-top: 1px dotted #999;
+    min-height: 104px;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}*/

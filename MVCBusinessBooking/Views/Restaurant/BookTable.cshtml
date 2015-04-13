@@ -1,0 +1,69 @@
+﻿@model MVCBusinessBooking.ViewModels.BookingViewModel
+
+@{
+    ViewBag.Title = "BookTable";
+}
+<div class="container" style="background-color: white; margin-left: 20px; opacity: 0.8;">
+    <h2>Bordsbokning</h2>
+    <p style="font-size: medium">Vänligen fyll i formuläret under för att boka bord hos <b>@Model.Name</b> </p>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset style="font-size: small" class="col-lg-4">
+            <legend>Restaurant</legend>
+
+            @Html.HiddenFor(model => model.BusinessID)
+            @Html.Hidden("getAvailableTablesAction", Url.Action("GetAvailableTables"))
+            <div class="editor-label">
+                @Html.LabelFor(model => model.NumberOfPeople, "Antal personer")
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.NumberOfPeople, new { type = "number", min = "1", max = "10", @Value = "2" })
+            </div>
+
+            <label>Datum</label>
+            @*<input id="datetimepicker3" type="text">*@
+
+            <div id="datepicker"></div>
+            <input id="dateButton" type="button" value="Välj tid" class="btn btn-default" />
+
+            <div id="dialog" title="Basic dialog">
+                <div id="timeSlots"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Name, "Namn")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.PhoneNumber, "Telefonnummer")
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.PhoneNumber)
+                @Html.ValidationMessageFor(model => model.PhoneNumber)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Email)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.NumberOfPeople, "Antal personer")
+            </div>
+
+            <p>
+                <input type="submit" value="Confirm" id="save" class="btn btn-default" />
+            </p>
+        </fieldset>
+    }
+</div>

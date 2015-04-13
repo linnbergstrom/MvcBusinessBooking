@@ -1,0 +1,27 @@
+﻿@using MVCBusinessBooking.Domain.Models
+@model IEnumerable<Restaurant>
+@{
+    ViewBag.Title = "Bookings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    @using (Html.BeginForm())
+    {
+        <div style="font-size: small" class="col-lg-4">
+            City Search: @Html.TextBox("SearchString") <br />
+        </div>
+    }
+
+    <ol class="round " style="font-size: small">
+        @foreach (Restaurant item in Model)
+        {
+            if (item.PictureUrl == null)
+            {
+                item.PictureUrl = "";
+            }
+            @Html.Partial("_ResturantsPartial", item)
+        }
+    </ol>
+</div>

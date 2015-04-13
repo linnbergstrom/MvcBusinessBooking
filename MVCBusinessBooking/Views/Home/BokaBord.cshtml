@@ -1,0 +1,34 @@
+﻿@model MVCBusinessBooking.Domain.Models.Table
+
+@{
+    ViewBag.Title = "Boka bord";
+}
+
+<input id="datetimepicker1" type="text">
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $(function() {
+            jQuery('#datetimepicker1').datetimepicker({
+                lang: 'de',
+                i18n: {
+                    de: {
+                        months: [
+                         'Januar', 'Februar', 'März', 'April',
+                         'Mai', 'Juni', 'Juli', 'August',
+                         'September', 'Oktober', 'November', 'Dezember',
+                        ],
+                        dayOfWeek: [
+                         "So.", "Mo", "Di", "Mi",
+                         "Do", "Fr", "Sa.",
+                        ]
+                    }
+                },
+                timepicker: false,
+                format: 'd.m.Y'
+            });
+            });
+
+    </script>
+}

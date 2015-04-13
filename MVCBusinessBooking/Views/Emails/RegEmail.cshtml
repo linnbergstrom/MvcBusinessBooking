@@ -1,0 +1,16 @@
+﻿@{
+    Layout = null;
+}
+
+<h2>Välkommen till AlaKatt $restaurantName!</h2>
+<div>
+    <p>
+        Vänligen följ länken för att bekräfta er registrering.
+        <br /><br />
+        @*<a href="http://localhost/Account/RegisterConfirmation/@ViewBag.ConfirmationToken">Bekräfta Email</a>*@
+
+        <a href="@ViewBag.ServerLink@Url.Action("RegisterConfirmation", "Account")/@ViewBag.ConfirmationToken">Bekräfta Email</a>
+
+    </p>
+</div>
+
